@@ -6,7 +6,12 @@ while(nombre == ""){
 }
 alert("Gracias por comunicarse con nosotros " + nombre + ". 😁")
 
+let producto = 0;
+let costo = 0;
+let canti = 0;
+const iva = 0.13;
 let salir = 1;
+
 while(salir == 1){
     let tipoCarne = parseInt(prompt("Actualmente contamos con una gran variedad de cortes de carne de Res y de Pollo. \nPor favor, escoja el tipo de carne que desea comprar (1 o 2). \n\n1. Res \n2. Pollo"));
 
@@ -18,13 +23,12 @@ while(salir == 1){
         producto = parseInt(prompt("Incorrecto! Ingrese un número de producto válido."))
         }
 
-        let costo = 0;
         switch(producto){
             case 1:
                 costo = 200;
                 alert("El bistec tiene un costo de ¢" + costo + " por unidad.");
                 cantidad();
-                // operacion();
+                operacion();
                 break;
             case 2:
                 costo = 250
@@ -59,7 +63,6 @@ while(salir == 1){
         producto = parseInt(prompt("Incorrecto! Ingrese un número de producto válido"))
         }
 
-        let costo = 0;
         switch(producto){
             case 1:
             costo = 300;
@@ -105,9 +108,8 @@ function cantidad(){
     alert("Usted ha escogido " + canti + " unidades. \n\nTome en cuenta que el costo de nuestros productos NO incluyen el IVA (13%).")
 }
 
-const iva = 0.13;
 function operacion(){
-    let subTotal = costo * canti;
-    let total = costo * canti + iva
-    alert("Costo producto: " + costo + " \nCosto producto por cantidad: " + subTotal + " \nCosto total con IVA: " + total);
+let subTotal = costo * canti;
+let total = costo * canti + iva
+    alert("Costo producto: ¢" + costo + " \nCosto producto por cantidad: ¢" + subTotal + " \nCosto total con IVA: ¢" + total);
 }
